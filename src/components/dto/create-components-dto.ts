@@ -1,6 +1,4 @@
-import { Optional } from '@nestjs/common';
-import { IsBoolean, IsDate, IsEnum, IsNotEmpty, IsString } from 'class-validator';
-import { CreateVersionDto } from 'src/versions/dto/create-versions-dto';
+import { IsBoolean, IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { ComponentTypeStatus } from './componentType.enum';
 import { crawlerTimeConfig } from './crawlerTime.enum';
 
@@ -40,5 +38,4 @@ export class CreateComponentDto {
   @IsNotEmpty()
   @IsBoolean()
   componentStatus: boolean;
-
 }

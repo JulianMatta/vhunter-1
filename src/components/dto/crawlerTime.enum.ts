@@ -1,6 +1,6 @@
 export enum crawlerTimeConfig {
-    ONEHOUR = 'ONEHOUR',
-    THREEHOUR = 'THREEHOUR',
-    SIXHOUR = 'SIXHOUR',
-    ONEDAY = 'ONEDAY',
+  ONEHOUR = 'ONEHOUR',
+  THREEHOUR = 'THREEHOUR',
+  SIXHOUR = 'SIXHOUR',
+  ONEDAY = 'ONEDAY',
 }

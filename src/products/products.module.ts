@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmExModule } from 'src/databaseCustomRepository/typeorm-ex.module';
+import { TypeOrmExModule } from '../databaseCustomRepository/typeorm-ex.module';
 import { ProductsController } from './products.controller';
 import { ProductsRepository } from './products.repository';
 import { ProductsService } from './products.service';

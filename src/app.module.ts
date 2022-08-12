@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 import { ProductsModule } from './products/products.module';
 import { ComponentsModule } from './components/components.module';
 import { VersionsModule } from './versions/versions.module';
@@ -15,6 +16,9 @@ import { VhunterController } from './vhunter/vhunter.controller';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     ProductsModule,
     ComponentsModule,
     VersionsModule,
@@ -24,11 +28,11 @@ import { VhunterController } from './vhunter/vhunter.controller';
     ScheduleModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'mysql-84952-0.cloudclusters.net',
-      port: 10023,
-      username: 'admin',
-      password: 'QyHro9GH',
-      database: 'vhunter',
+      host: process.env.HOSTDB,
+      port: Number(process.env.PORTDB),
+      username: process.env.USERBD,
+      password: process.env.PASSDB,
+      database: process.env.NAMEDB,
       autoLoadEntities: true,
       entities: [Products, Components, Versions, User],
       synchronize: true,
@@ -36,4 +40,4 @@ import { VhunterController } from './vhunter/vhunter.controller';
   ],
   controllers: [VhunterController],
 })
-export class AppModule { }
+export class AppModule {}

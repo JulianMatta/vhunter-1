@@ -1,5 +1,5 @@
 export enum ComponentTypeStatus {
-    WEB = 'WEB',
-    PLAYSTORE = 'PLAYSTORE',
-    WEBBACKEND = 'WEBBACKEND',
+  WEB = 'WEB',
+  PLAYSTORE = 'PLAYSTORE',
+  //    WEBBACKEND = 'WEBBACKEND',
 }

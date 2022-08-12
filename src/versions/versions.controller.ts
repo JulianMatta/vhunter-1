@@ -5,19 +5,21 @@ import { VersionsService } from './versions.service';
 
 @Controller('versions')
 export class VersionsController {
-  constructor(private versionsService: VersionsService) { }
-  @Post()
+  constructor(private versionsService: VersionsService) {}
+  /* @Post()
   create(@Body() createVersionDto: CreateVersionDto) {
     return this.versionsService.create(createVersionDto);
   }
-
+*/
   @Get('/')
   getAllVersions(): Promise<Versions[]> {
     return this.versionsService.getAllVersions();
   }
 
   @Get('/lastVersion/:componentID')
-  getLastVersion(@Param('componentID') componentID: string): Promise<{ versionCode: string, versionDate: Date }> {
+  getLastVersion(
+    @Param('componentID') componentID: string,
+  ): Promise<{ versionCode: string; versionDate: Date }> {
     return this.versionsService.getLastVersionAndDate(componentID);
   }
 }
